@@ -1,2 +1,7 @@
 # engr103
-GitHub repo for ENGR 103 final project code
+
+## Author
+Katie Kimura
+
+## What does it do?
+Running this code will start up a memory game 
