@@ -83,6 +83,7 @@ void loop()
     levelTextOutput();
   }
 
+  // trigger different light sequences depending on the value of mode control 
   switch(modeControl)           
   {
     case 1: 
@@ -125,6 +126,7 @@ void loop()
 
 
 // function for making LEDs sparkle 
+// takes integer argument that affects how fast the lights will sparkle 
 int sparkle(int level) 
 {
   count = 0;
@@ -157,7 +159,7 @@ int sparkle(int level)
   delay(5);
 }
 
-
+// read if switch has been flipped and if so, turn all LEDs on to signify start of level
 void readSwitch()
 {
   for(int i = 0; i < 10; i++)
@@ -167,6 +169,7 @@ void readSwitch()
   switchFlag = 0;
 }
 
+// prompts the user for input and outputs whether their guess was right or wrong + how much they were off by 
 void getUserInput()
 {
   Serial.println("Please input your guess");
@@ -186,6 +189,7 @@ void getUserInput()
   }
 }
 
+// output which level has been selected only when the buttons are pressed
 void levelTextOutput()
 {
   switch(modeControl)
@@ -210,11 +214,14 @@ void levelTextOutput()
     }
 }
 
+
+// ISR functions 
+
+
 void decrease()
 {
   leftFlag = 1;
 }
-
 
 void increase()
 {
